@@ -23,7 +23,7 @@ if (existingJob == null) {
 
     // Configure separate pipeline repository (Jenkinsfile Repo)
     def pipelineScm = new hudson.plugins.git.GitSCM(pipelineRepoUrl)
-    pipelineScm.branches = [new hudson.plugins.git.BranchSpec("*/main")]
+    pipelineScm.branches = [new hudson.plugins.git.BranchSpec("*/develop")]
 
     // Load the Jenkinsfile from the pipeline repository
     def flowDefinition = new CpsScmFlowDefinition(pipelineScm, "Jenkinsfile")
