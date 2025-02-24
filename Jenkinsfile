@@ -33,7 +33,7 @@ node {
     ])
 
     // Define other params to use in stages
-    def appVersion = params.APP_VERSION
+    def appVersion = params.APP_VERSION == "develop" ? "2.1" : params.APP_VERSION
     def packageType = params.PACKAGE_TYPE
     def appName = gitRepo.tokenize('/').last().replaceAll(/\.git$/, '')
     def checkoutDir = "${appName}-${appVersion}"
