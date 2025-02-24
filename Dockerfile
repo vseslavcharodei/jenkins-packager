@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 
 # Set environment variables for Jenkins
 ENV GIT_REPO=https://github.com/vseslavcharodei/sysinfo-collector.git
-ENV PIPELINE_GIT_REPO=https://github.com/vseslavcharodei/jenkins-pipelines.git
+ENV PIPELINE_GIT_REPO=https://github.com/vseslavcharodei/jenkins-packager.git
 ENV JENKINS_HOME=/var/jenkins_home
 ARG LOCAL_JENKINS_HOME=jenkins_home
 # INSECURE: Uncomment below line if you want to disable auth and initial set up wizard to be displayed.

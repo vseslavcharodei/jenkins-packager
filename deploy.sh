@@ -8,7 +8,7 @@ fi
 
 # Define variables
 GIT_REPO="https://github.com/vseslavcharodei/sysinfo-collector.git"
-PIPELINE_GIT_REPO="https://github.com/vseslavcharodei/jenkins-pipelines.git"
+PIPELINE_GIT_REPO="https://github.com/vseslavcharodei/jenkins-packager.git"
 
 echo "Building the Jenkins container with pre-configured pipeline..."
 docker build -t jenkins-packager .
