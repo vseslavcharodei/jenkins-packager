@@ -1,6 +1,6 @@
 # Jenkins Automation for Building DEB and RPM Packages
 
-This repository provides a Jenkins automation setup for building `.deb` and `.rpm` packages for this test project: https://github.com/vseslavcharodei/sysinfo-collector.git
+This repository provides a Jenkins automation setup for building `.deb` and `.rpm` packages for this test project: [sysinfo-collector](https://github.com/vseslavcharodei/sysinfo-collector.git)
 It includes a pre-configured Jenkins pipeline, Docker-based Jenkins deployment, and scripts for provisioning the pipeline.
 
 ## 📌 Purpose
@@ -26,11 +26,11 @@ Before using this setup, ensure you have:
 2. **Modify repositories links in `deploy.sh`**
    
    `GIT_REPO` - is a variable that controlls app repository that will be built.
-   Default is a test project: https://github.com/vseslavcharodei/sysinfo-collector.git.
+   Default is a test project: [sysinfo-collector](https://github.com/vseslavcharodei/sysinfo-collector.git)
    Compatibility with other repositories has not been tested. 
 
    `PIPELINE_GIT_REPO` - is a variable that controlls repository with Jenkinsfile that will be used to create job in Jenkins under container.
-   Default is this very project: https://github.com/vseslavcharodei/jenkins-packager.git
+   Default is this very project: [https://github.com/vseslavcharodei/jenkins-packager.git](https://github.com/vseslavcharodei/jenkins-packager.git)
    Compatibility with other repositories has not been tested, as script script also provisions plugins, scriptler script and and approvals, it most probably won't work with your very pipelines.
 
 3. **Run the setup script**
@@ -59,6 +59,31 @@ Before using this setup, ensure you have:
 1. **Go to Jenkins UI:** [http://localhost:8080](http://localhost:8080)
 2. **Select the "Build-Pipeline" job** from the dashboard.
 3. Click on **"Build Now"** to trigger the build process.
+4. Open build run and check Artifacts to download package files. With a first run, develop version of https://github.com/vseslavcharodei/sysinfo-collector.git is built and only rpm packages.
+5. Subsuquent run: click on **"Build Now with Parameters"**. Available parameters to select:
+- APP_VERSION - list of versions to build retrieved dynamically from brances of the APP repository;
+- PACKAGE_TYPE - allows select: rpm, deb, all.
+
+## 🚀 Onece you've build and download packages
+
+Terminate Jenkins container:
+
+   ```bash
+   docker stop jenkins-packager
+   docker ps -a
+   docker rm jenkins-packager
+   ```
+
+To delete jenkins-packager image from docker local repository:
+
+   ```bash
+   docker image ls jenkins-packager
+   docker rm jenkins-packager
+   ```
+
+## 🚀 Install app
+
+Check app repository [README](https://github.com/vseslavcharodei/sysinfo-collector/blob/develop/README.md)
 
 ## 🔄 Workflow Description
 
