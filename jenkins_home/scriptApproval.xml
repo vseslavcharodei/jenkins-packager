@@ -1,0 +1,18 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<scriptApproval plugin="script-security@1373.vb_b_4a_a_c26fa_00">
+  <approvedScriptHashes>
+    <string>SHA512:2f89ba76fcaf10b505a6407a0a0509a210737bfc37333e556aa20ed7059b4607c3a20ffe4240a5feada5634f175256584740c87c979a5aa34e596d4faf1028c0</string>
+    <string>SHA512:462da98fc2544e09991a0202815a1ef91dfa04256e06f7772e63a700e8347d869b747e3bfdcdba1a606c024ac01230389ba831eecf0fa0107a90b5ab176f52cc</string>
+  </approvedScriptHashes>
+  <approvedSignatures>
+    <string>method org.jenkinsci.plugins.gitclient.Git getClient</string>
+    <string>method org.jenkinsci.plugins.gitclient.GitClient getRemoteReferences java.lang.String java.lang.String boolean boolean</string>
+    <string>staticMethod org.jenkinsci.plugins.gitclient.Git with hudson.model.TaskListener hudson.EnvVars</string>
+  </approvedSignatures>
+  <aclApprovedSignatures/>
+  <approvedClasspathEntries/>
+  <forceSandbox>false</forceSandbox>
+  <pendingScripts/>
+  <pendingSignatures/>
+  <pendingClasspathEntries/>
+</scriptApproval>

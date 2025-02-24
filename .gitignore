@@ -1,0 +1,4 @@
+.DS_Store
+
+# Ignore jenkins init password file
+*.pass

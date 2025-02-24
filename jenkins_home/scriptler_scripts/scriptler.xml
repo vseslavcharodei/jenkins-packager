@@ -1,0 +1,15 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<scriptler plugin="scriptler@397.vc46f19cb_3c18">
+  <scriptSet class="sorted-set">
+    <script>
+      <id>getGitBranches.groovy</id>
+      <name>getGitBranches.groovy</name>
+      <comment>Retrieve Git branches using Jenkins GitClient</comment>
+      <parameters/>
+      <available>true</available>
+      <nonAdministerUsing>true</nonAdministerUsing>
+      <onlyBuiltIn>false</onlyBuiltIn>
+    </script>
+  </scriptSet>
+  <disableRemoteCatalog>false</disableRemoteCatalog>
+</scriptler>

@@ -1,0 +1,8 @@
+workflow-aggregator
+workflow-durable-task-step
+workflow-job
+workflow-cps
+git
+git-client
+uno-choice
+scriptler
