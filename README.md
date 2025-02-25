@@ -64,7 +64,7 @@ Before using this setup, ensure you have:
 - APP_VERSION - list of versions to build retrieved dynamically from brances of the APP repository;
 - PACKAGE_TYPE - allows select: rpm, deb, all.
 
-## 🚀 Onece you've build and download packages
+## 🚀 Onece you've built and downloaded packages
 
 Terminate Jenkins container:
 
