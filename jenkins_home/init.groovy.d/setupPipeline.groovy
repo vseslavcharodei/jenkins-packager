@@ -6,8 +6,8 @@ import hudson.plugins.git.*
 def jenkins = Jenkins.instance
 
 // Define repository URLs
-def appRepoUrl = System.getenv("APP_GIT_REPO") // MyApp Repository
-def pipelineRepoUrl = System.getenv("PIPELINE_GIT_REPO") // Jenkinsfile Repository
+def appRepoUrl = System.getenv("GIT_REPO") // sysinfo-collector repository
+def pipelineRepoUrl = System.getenv("PIPELINE_GIT_REPO") // jenkins-packager repository
 
 def jobName = "Build-Pipeline"
 def existingJob = jenkins.getItem(jobName)
@@ -19,7 +19,7 @@ if (existingJob == null) {
 
     // Configure source code repository (MyApp Repo)
     def appScm = new hudson.plugins.git.GitSCM(appRepoUrl)
-    appScm.branches = [new hudson.plugins.git.BranchSpec("*/main")]
+    appScm.branches = [new hudson.plugins.git.BranchSpec("*/develop")]
 
     // Configure separate pipeline repository (Jenkinsfile Repo)
     def pipelineScm = new hudson.plugins.git.GitSCM(pipelineRepoUrl)
@@ -36,7 +36,7 @@ if (existingJob == null) {
 
     // Update pipeline repository to fetch Jenkinsfile
     def pipelineScm = new hudson.plugins.git.GitSCM(pipelineRepoUrl)
-    pipelineScm.branches = [new hudson.plugins.git.BranchSpec("*/main")]
+    pipelineScm.branches = [new hudson.plugins.git.BranchSpec("*/develop")]
 
     def flowDefinition = new CpsScmFlowDefinition(pipelineScm, "Jenkinsfile")
     existingJob.definition = flowDefinition
